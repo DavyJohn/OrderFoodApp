@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:orientation="horizontal"
-        android:id="@+id/tab_layout"
         android:background="@color/home_tab_bg">
        <include layout="@layout/home_tab_layout"/>
     </LinearLayout>
