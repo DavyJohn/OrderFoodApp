@@ -1,14 +1,18 @@
 package com.example.orderfoodapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.example.orderfoodapp.ui.fragments.HomeFragment
+import com.example.orderfoodapp.ui.fragments.MoreFragment
+import com.example.orderfoodapp.ui.fragments.OrderFragment
+import com.example.orderfoodapp.ui.fragments.PersonFragment
 import kotlinx.android.synthetic.main.home_tab_layout.*
 
 class MainActivity : AppCompatActivity()  {
-
+    val  fragment : List<Fragment> = listOf<Fragment>(HomeFragment(),OrderFragment(),PersonFragment(),MoreFragment())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,6 +44,8 @@ class MainActivity : AppCompatActivity()  {
                 changetabItem(child,true);
             }
         }
+
+        supportFragmentManager.beginTransaction().replace(R.id.content,fragment.get(index)).commit()
     }
 
     private fun changetabItem(child : View, isEnable : Boolean) {

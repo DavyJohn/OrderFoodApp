@@ -13,6 +13,6 @@ class MoreFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return View.inflate(activity, R.layout.more_layout,container)
+        return inflater.inflate(R.layout.more_layout,container,false)
     }
 }
